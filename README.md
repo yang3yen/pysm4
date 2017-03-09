@@ -5,12 +5,12 @@ pysm4
 
 ### SM4算法
 
-国密 SM4(无线局域网SMS4)算法， 一个分组算法， 分组长度为128bit， 密钥长度为128bit。
+国密SM4(无线局域网SMS4)算法， 一个分组算法， 分组长度为128bit， 密钥长度为128bit，
 算法具体内容参照[SM4算法](https://drive.google.com/file/d/0B0o25hRlUdXcbzdjT0hrYkkwUjg/view?usp=sharing)。
 
 ### pysm4
 
-pysm4是国密 SM4算法的Python实现， 提供了`encrypt`、 `decrypt`、 `sm4_encrypt_ecb`、 `sm4_decrypt_ecb`、 `sm4_encrypt_cbc`、
+pysm4是国密SM4算法的Python实现， 提供了`encrypt`、 `decrypt`、 `sm4_encrypt_ecb`、 `sm4_decrypt_ecb`、 `sm4_encrypt_cbc`、
 `sm4_decrypt_cbc`等函数用于加密解密， 用法如下：
 
 #### 1. `encrypt`和`decrypt`
@@ -35,13 +35,13 @@ True
 ```python
 >>> from pysm4 import sm4_encrypt_ecb, sm4_decrypt_ecb
 # 明文
->>> plain_text = 'pysm4是国密算法的Python实现'
+>>> plain_text = 'pysm4是国密SM4算法的Python实现'
 # 密钥
 >>> key = 'hello, world!'  # 密钥长度小于等于16字节
 # 加密
 >>> cipher_text = sm4_encrypt_ecb(plain_text, key)
 >>> cipher_text
-'leZZuLBfxQvB/szEmDaEpc9Hwu5U0WhT79e5euwdSY6LSeLTQ55fD2GJwvDs2sJ8'
+'ng3L4ldgvsZciAgx3LhplDvIzrd0+GXiNqNmd1VW0YOlwo+ojtpownOCbnxbq/3y'
 # 解密
 >>> plain_text == sm4_decrypt_ecb(cipher_text, key)
 True
@@ -52,14 +52,14 @@ True
 ```python
 >>> from pysm4 import sm4_encrypt_cbc, sm4_decrypt_cbc
 # 明文
->>> plain_text = 'pysm4是国密算法的Python实现'
+>>> plain_text = 'pysm4是国密SM4算法的Python实现'
 # 密钥
 >>> key = 'hello, world!'  # 密钥 长度小于等于16字节
 # 初始化向量
 >>> iv = '11111111'        # 初始化向量  长度小于等于16字节
 # 加密
 >>> cipher_text = sm4_encrypt_cbc(plain_text, key, iv)
-'xj0ubn7KuGRIL/WjoVZgG2DzzWOFui3DkI1SycA5xd6edI9FhAEaL+eLtiolVuaz'
+'cTsdKRSH2FqIJf22NHMjX5ZFHghR4ZtJ10wbNwj2//bJSElBXVeMtFycjdlVKP15'
 # 解密
 >>> plain_text == sm4_decrypt_cbc(cipher_text, key, iv)
 True
