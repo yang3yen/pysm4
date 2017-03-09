@@ -52,7 +52,7 @@ True
 ```python
 >>> from pysm4 import sm4_encrypt_cbc, sm4_decrypt_cbc
 # 明文
->>> plain_text = 'pysm4是国密算法的python实现'
+>>> plain_text = 'pysm4是国密算法的Python实现'
 # 密钥
 >>> key = 'hello, world!'  # 密钥 长度小于等于16字节
 # 初始化向量
@@ -66,6 +66,12 @@ True
 ```
 
 pysm4实现了分组密码工作模式中的`ECB`(电子密码本)和`CBC`(密码块链接)模式， 具体内容请参考维基百科的[分组密码工作模式](https://zh.wikipedia.org/wiki/%E5%88%86%E7%BB%84%E5%AF%86%E7%A0%81%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%BC%8F)。
+
+### 安装
+
+```bash
+$ python setup.py install
+```
 
 ### 兼容
 
