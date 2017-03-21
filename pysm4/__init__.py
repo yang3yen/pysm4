@@ -5,14 +5,14 @@
     pysm4
     ~~~~~
 
-    pysm4是国密 SM4算法的Python实现， 提供了`encrypt`、 `decrypt`、 `sm4_encrypt_ecb`、
-    `sm4_decrypt_ecb`、 `sm4_encrypt_cbc`、 `sm4_decrypt_cbc`等函数用于加密解密。
+    pysm4是国密 SM4算法的Python实现， 提供了`encrypt`、 `decrypt`、 `encrypt_ecb`、
+    `decrypt_ecb`、 `encrypt_cbc`、 `decrypt_cbc`等函数用于加密解密。
 
     :copyright: (c) 2017 by yang3yen.
     :license: MIT, see LICENSE for more details.
 """
-from .sm4 import encrypt, decrypt, sm4_encrypt_ecb, \
-    sm4_decrypt_ecb, sm4_encrypt_cbc, sm4_decrypt_cbc
+from .sm4 import encrypt, decrypt, encrypt_ecb, \
+    decrypt_ecb, encrypt_cbc, decrypt_cbc
 
 
 __title__ = 'pysm4'

@@ -8,8 +8,8 @@ from base64 import b64encode, b64decode
 from binascii import hexlify, unhexlify
 
 
-__all__ = ['sm4_encrypt_ecb', 'sm4_decrypt_ecb',
-           'sm4_encrypt_cbc', 'sm4_decrypt_cbc',
+__all__ = ['encrypt_ecb', 'decrypt_ecb',
+           'encrypt_cbc', 'decrypt_cbc',
            'encrypt', 'decrypt']
 
 
@@ -28,7 +28,6 @@ if PY2:
     text_type = unicode
     binary_type = str
 else:
-    # py3
     _range = range
     string_types = (str,)
     text_type = str
@@ -333,7 +332,7 @@ def _unhex(hex_str):
 
 
 # 电子密码本(ECB)
-def sm4_encrypt_ecb(plain_text, key):
+def encrypt_ecb(plain_text, key):
     """
     SM4(ECB)加密
     :param plain_text: 明文
@@ -358,7 +357,7 @@ def sm4_encrypt_ecb(plain_text, key):
     return cipher_text if PY2 else cipher_text.decode(E_FMT)
 
 
-def sm4_decrypt_ecb(cipher_text, key):
+def decrypt_ecb(cipher_text, key):
     """
     SM4(ECB)解密
     :param cipher_text: 密文
@@ -382,7 +381,7 @@ def sm4_decrypt_ecb(cipher_text, key):
 
 
 # 密码块链接(CBC)
-def sm4_encrypt_cbc(plain_text, key, iv):
+def encrypt_cbc(plain_text, key, iv):
     """
     SM4(CBC)加密
     :param plain_text: 明文
@@ -411,7 +410,7 @@ def sm4_encrypt_cbc(plain_text, key, iv):
     return cipher_text if PY2 else cipher_text.decode(E_FMT)
 
 
-def sm4_decrypt_cbc(cipher_text, key, iv):
+def decrypt_cbc(cipher_text, key, iv):
     """
     SM4(CBC)解密
     :param cipher_text: 密文

@@ -10,8 +10,8 @@ pysm4
 
 ### pysm4
 
-pysm4是国密SM4算法的Python实现， 提供了`encrypt`、 `decrypt`、 `sm4_encrypt_ecb`、 `sm4_decrypt_ecb`、 `sm4_encrypt_cbc`、
-`sm4_decrypt_cbc`等函数用于加密解密， 用法如下：
+pysm4是国密SM4算法的Python实现， 提供了`encrypt`、 `decrypt`、 `encrypt_ecb`、 `decrypt_ecb`、 `encrypt_cbc`、
+`decrypt_cbc`等函数用于加密解密， 用法如下：
 
 #### 1. `encrypt`和`decrypt`
 
@@ -30,27 +30,27 @@ pysm4是国密SM4算法的Python实现， 提供了`encrypt`、 `decrypt`、 `sm
 True
 ```
 
-#### 2. `sm4_encrypt_ecb`和`sm4_decrypt_ecb`
+#### 2. `encrypt_ecb`和`decrypt_ecb`
 
 ```python
->>> from pysm4 import sm4_encrypt_ecb, sm4_decrypt_ecb
+>>> from pysm4 import encrypt_ecb, decrypt_ecb
 # 明文
 >>> plain_text = 'pysm4是国密SM4算法的Python实现'
 # 密钥
 >>> key = 'hello, world!'  # 密钥长度小于等于16字节
 # 加密
->>> cipher_text = sm4_encrypt_ecb(plain_text, key)
+>>> cipher_text = encrypt_ecb(plain_text, key)
 >>> cipher_text
 'ng3L4ldgvsZciAgx3LhplDvIzrd0+GXiNqNmd1VW0YOlwo+ojtpownOCbnxbq/3y'
 # 解密
->>> plain_text == sm4_decrypt_ecb(cipher_text, key)
+>>> plain_text == decrypt_ecb(cipher_text, key)
 True
 ```
 
-#### 3. `sm4_encrypt_cbc`和`sm4_decrypt_cbc`
+#### 3. `encrypt_cbc`和`decrypt_cbc`
 
 ```python
->>> from pysm4 import sm4_encrypt_cbc, sm4_decrypt_cbc
+>>> from pysm4 import encrypt_cbc, decrypt_cbc
 # 明文
 >>> plain_text = 'pysm4是国密SM4算法的Python实现'
 # 密钥
@@ -58,10 +58,10 @@ True
 # 初始化向量
 >>> iv = '11111111'        # 初始化向量  长度小于等于16字节
 # 加密
->>> cipher_text = sm4_encrypt_cbc(plain_text, key, iv)
+>>> cipher_text = encrypt_cbc(plain_text, key, iv)
 'cTsdKRSH2FqIJf22NHMjX5ZFHghR4ZtJ10wbNwj2//bJSElBXVeMtFycjdlVKP15'
 # 解密
->>> plain_text == sm4_decrypt_cbc(cipher_text, key, iv)
+>>> plain_text == decrypt_cbc(cipher_text, key, iv)
 True
 ```
 

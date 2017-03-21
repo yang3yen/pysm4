@@ -32,17 +32,17 @@ class TestPySM4(unittest.TestCase):
 
     def test_crypt_ecb(self):
         # SM4 ECB加密解密测试
-        self.assertEqual(sm4_decrypt_ecb(cipher_text=sm4_encrypt_ecb(plain_text=self.plain_text,
-                                                                     key=self.key),
-                                         key=self.key), self.plain_text)
+        self.assertEqual(decrypt_ecb(cipher_text=encrypt_ecb(plain_text=self.plain_text,
+                                                             key=self.key),
+                                     key=self.key), self.plain_text)
 
     def test_crypt_cbc(self):
         # SM4 CBC加密解密测试
-        self.assertEqual(sm4_decrypt_cbc(cipher_text=sm4_encrypt_cbc(plain_text=self.plain_text,
-                                                                     key=self.key,
-                                                                     iv=self.iv),
-                                         key=self.key,
-                                         iv=self.iv), self.plain_text)
+        self.assertEqual(decrypt_cbc(cipher_text=encrypt_cbc(plain_text=self.plain_text,
+                                                             key=self.key,
+                                                             iv=self.iv),
+                                     key=self.key,
+                                     iv=self.iv), self.plain_text)
 
 
 if __name__ == '__main__':
