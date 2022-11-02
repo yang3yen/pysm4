@@ -11,12 +11,13 @@
     :copyright: (c) 2017 by yang3yen.
     :license: MIT, see LICENSE for more details.
 """
-from .sm4 import encrypt, decrypt, encrypt_ecb, \
+from .sm4 import (
+    encrypt, decrypt, encrypt_ecb,
     decrypt_ecb, encrypt_cbc, decrypt_cbc
-
+)
 
 __title__ = 'pysm4'
-__version__ = '0.7'
+__version__ = '0.7.1'
 __author__ = 'yang3yen'
 __license__ = 'MIT'
 __copyright__ = 'Copyright 2017 yang3yen'
