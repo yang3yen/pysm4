@@ -69,8 +69,16 @@ pysm4实现了分组密码工作模式中的`ECB`(电子密码本)和`CBC`(密�
 
 ### 安装
 
+#### GitHub
+
 ```bash
 $ python setup.py install
+```
+
+#### PyPI
+
+```bash
+$ pip install pysm4
 ```
 
 ### 兼容

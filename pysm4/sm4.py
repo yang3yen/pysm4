@@ -7,11 +7,9 @@ from sys import version_info
 from base64 import b64encode, b64decode
 from binascii import hexlify, unhexlify
 
-
 __all__ = ['encrypt_ecb', 'decrypt_ecb',
            'encrypt_cbc', 'decrypt_cbc',
            'encrypt', 'decrypt']
-
 
 if version_info[0] == 2:
     # python2
@@ -237,7 +235,7 @@ def _crypt(num, mk, mode=SM4_ENCRYPT):
     if mode == SM4_DECRYPT:
         round_keys = round_keys[::-1]
     for i in _range(32):
-        x_keys.append(_round_f(x_keys[i:i+4], round_keys[i]))
+        x_keys.append(_round_f(x_keys[i:i + 4], round_keys[i]))
     return _byte_pack(x_keys[-4:][::-1], byte_n=16)
 
 
@@ -437,7 +435,3 @@ def decrypt_cbc(cipher_text, key, iv):
     plain_text = _padding(_unhex(''.join(plain_hex_list)),
                           mode=SM4_DECRYPT)
     return plain_text if PY2 else plain_text.decode(E_FMT)
-
-
-if __name__ == '__main__':
-    pass
