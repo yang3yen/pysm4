@@ -23,7 +23,7 @@ class PyTest(test_command):
 
 
 url = 'https://github.com/yang3yen/pysm4.git'
-with open('README.md', 'r') as fp:
+with open('README.md', 'r', encoding='utf-8') as fp:
     long_description = fp.read()
 
 setup(name=pysm4.__title__,
@@ -34,23 +34,26 @@ setup(name=pysm4.__title__,
       url=url,
       description='Python SM4',
       long_description=long_description,
+      long_description_content_type="text/markdown",
       platforms='any',
       zip_safe=False,
       packages=['pysm4'],
-      classifiers=(
-          'Development Status :: 4 - Beta'
-          'Intended Audience :: Developers'
+      classifiers=[
           'License :: OSI Approved :: MIT License',
-          'Operating System :: OS Independent',
           'Programming Language :: Python',
           'Programming Language :: Python :: 2',
           'Programming Language :: Python :: 2.7',
           'Programming Language :: Python :: 3',
           'Programming Language :: Python :: 3.3',
           'Programming Language :: Python :: 3.4',
-          'Programming Language :: Python :: 3.5'
-          'Programming Language :: Python :: 3.6'
-      ),
+          'Programming Language :: Python :: 3.5',
+          'Programming Language :: Python :: 3.6',
+          'Programming Language :: Python :: 3.7',
+          'Programming Language :: Python :: 3.8',
+          'Programming Language :: Python :: 3.9',
+          'Programming Language :: Python :: 3.10',
+          'Programming Language :: Python :: 3.11'
+      ],
       cmdclass={'test': PyTest},
       tests_require=['pytest>=2.8.0']
       )
