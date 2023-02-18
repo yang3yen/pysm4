@@ -44,6 +44,16 @@ class TestPySM4(unittest.TestCase):
                                      key=self.key,
                                      iv=self.iv), self.plain_text)
 
+    def test_bytes_key_iv(self):
+        key = b"9HdkinIPmHOn2zg="
+        iv = b"837bdd102b15e719"
+
+        self.assertEqual(decrypt_cbc(cipher_text=encrypt_cbc(plain_text=self.plain_text,
+                                                             key=key,
+                                                             iv=iv),
+                                     key=key,
+                                     iv=iv), self.plain_text)
+
 
 if __name__ == '__main__':
     unittest.main()
