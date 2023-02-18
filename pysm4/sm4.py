@@ -294,8 +294,8 @@ def _key_iv_check(key_iv):
     密钥或初始化向量检测
     """
     # 密钥
-    if key_iv is None or not isinstance(key_iv, string_types):
-        raise TypeError('Parameter key or iv:{} not a basestring'.format(key_iv))
+    if key_iv is None or not isinstance(key_iv, (string_types, binary_type)):
+        raise TypeError('Parameter key or iv:{} not string_types or binary_type'.format(key_iv))
 
     if isinstance(key_iv, text_type):
         key_iv = key_iv.encode(encoding=E_FMT)
