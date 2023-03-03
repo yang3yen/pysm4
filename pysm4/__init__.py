@@ -17,7 +17,7 @@ from .sm4 import (
 )
 
 __title__ = 'pysm4'
-__version__ = '0.7.1'
+__version__ = '0.7.2'
 __author__ = 'yang3yen'
 __license__ = 'MIT'
 __copyright__ = 'Copyright 2017 yang3yen'
